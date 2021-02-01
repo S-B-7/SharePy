@@ -1,0 +1,34 @@
+{% extends "navbar.html" %}
+{% block html %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//addPost.css')}}">
+    <title>Add Post</title>
+
+
+</head>
+    <body>
+      
+        <form id = "Frm" method="POST" autocomplete="off" >
+          <div id = "AddPostWrapper">
+            <p class = "titleLB"> Add Post </p>
+           
+                <label class = "enterLb" >Enter Title of the Post : </label>
+                
+                <input class = "textEnter" id = "postNameBox" name = "title" placeholder="post title">
+                
+                <label class = "enterLb" >Enter Content of the Post : </label>
+                
+                <textarea class = "textEnter" id = "postContentBox" name = "content" type = "text" placeholder="post content"></textarea>
+               
+                <button class ="submitBt" >Submit</button>
+            
+          </div>
+        </form>
+
+    </body>
+</html>
+
+{%endblock%}

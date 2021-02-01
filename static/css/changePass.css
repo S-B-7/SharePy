@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    text-align : center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flexbox;
+    flex-direction: column;
+    overflow-anchor: none;
+}
+
+#changePassWrapper{
+    width : 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 100px;
+    background-color: #1C1C1C;
+    height : 80%;
+    border-radius: 20px;
+    text-align: left;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.titleLb{
+    color: gray;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.enterLb{
+    color: gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+
+    
+}
+
+.textEnter{
+    background-color: rgb(44, 43, 43);
+    text-indent: 1rem;
+    color : white;
+    margin-left: 2rem;
+    width: calc(100% - 4rem);
+    outline: none;
+    border : none;
+    border-radius: 20px;
+   
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.submitBt{
+    background-color:  rgb(77, 14, 77);
+    text-align: center;   
+    border: none; 
+    font-size: 20px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: auto;
+    margin-bottom: 10%;
+    
+    
+}
+
+.showPassCheck{
+    margin-left: 2rem;
+}
+
+.showPassCheckLb{
+    color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+}

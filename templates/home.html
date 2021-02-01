@@ -1,0 +1,105 @@
+{% extends "navbar.html" %}
+{% block html %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//home.css')}}">
+     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     </head>
+
+    <title>
+        Home
+    </title>
+    
+    <body>
+           
+            <div id = "postArea" >
+                <rect width = "100px" height = "100px" style = "background-color: red;"></rect>
+            </div>
+            
+            <button id= "loadMoreBt">Load More Posts</button>
+           
+        
+    </body>
+
+    <script>
+        var offset = 0;
+        console.log("outside");
+    
+        $(document).ready(function (){
+            console.log("inside")
+            function showPost(post){
+                
+              
+                
+                $("#postArea").append( `<div class = "postWrapper"> 
+                    <p class = "postTitle"> 
+                        ${post['title']}
+                        </p> 
+                    <p class = "postContent"> 
+                        ${post["content"]}
+                        </p > 
+                   <a href = "/user/${post['poster']}" >
+                        <p class = "postFooter"> 
+                        Posted By ${post['poster'].toUpperCase()} on ${post['createdOn']} 
+                        </p> 
+                    </a>
+                </div> `  )  ;
+
+               
+            }
+
+            function getPost (){
+                $.ajax({
+                   type: "POST",
+                   url: "/getposts/",
+                   data: {offset : offset},
+                   success: function (posts) {
+                        if (posts){
+                            for (post of posts){
+                                showPost(post);
+                            }
+                            offset+=3;
+                        }
+                        else {
+                            alert("No more posts");
+                            $("#loadMoreBt").remove();
+                        }
+                   }
+                   
+               });     
+            }
+            getPost();
+           
+            $('#loadMoreBt').click(function(){
+                $('#loadMoreBt').html('Loading....');
+                getPost();
+                $('#loadMoreBt').html("Load More Posts")
+            });
+
+
+            $(window).scroll(function() {
+            if($("#postArea").scrollTop() + $("#postArea").height() > $(document).height() - 100) {
+                alert("near bottom!");
+            }
+});
+
+        });
+
+        
+
+    </script>
+
+   
+    <script>
+        {% with messages = get_flashed_messages() %}
+            {%if messages %}
+                {%for msg in messages %}
+                    alert("{{msg}}")
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+    </script>
+
+{%endblock%}

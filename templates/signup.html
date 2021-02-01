@@ -1,0 +1,115 @@
+{% extends "navbar.html" %}
+{% block html %}
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+    <head>
+        <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//login.css')}}">
+    </head>
+    <style>
+        .signUpBox{
+            width : 350px;
+            height: 530px;
+            background-color : #1C1C1C  ;
+            border-radius: 5%;
+            align-content: center;
+
+            border-style  : solid;
+            border-width: 1px;
+            border-color:grey;
+            margin: 0 auto;
+            text-align: left;
+            margin-top: auto;
+            margin-left: calc( (100% - 350px)/2);
+            margin-top: 4%;
+            }
+            .combo{
+                background-color: rgb(46, 45, 45);
+                margin-left: 2rem;
+                border-radius: 20px;
+                width : 80%;
+                border:  none;
+                height : 1.5rem;
+                color: gray;
+                text-indent: 1rem;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+    </style>
+    <title>Sign Up</title>
+
+    <body>
+
+        <div class = "outer">
+            <div class = "middle">
+                <div class = "signUpBox">
+
+                <form id = "Frm" method="POST" autocomplete="off">
+                    <p class = "titleLb">Sign Up</p>
+
+                    <label class = "enterLb" >Enter Username : </label>
+                    <br>
+                    <input class = "textEnter" id = "userEnter" autocomplete="false" name = "username"> 
+                    <br >
+                    <label class = "enterLb" >Select Gender : </label>
+                    <br>
+                    <select class = "combo" name = "gender">
+                        <option value="M">Male </option>
+                        <option value = "F">Female</option>
+                    </select>
+                    <br>
+                    <label class = "enterLb">Enter Password : </label>
+                    <br>
+                    <input class = "textEnter" type = "password" id = "passEnter" name = "password">  
+                    <br>
+                    <label class = "enterLb">Confirm Password : </label> 
+                    <br>
+                    <input class = "textEnter" type = "password" id = "confirmPassEnter" name = "confirmPass">
+                    <br>
+
+                    <input class= "showPassCheck" type = "checkbox" id = "showPassCheck">
+                    <label class = "showPassCheckLb" for = "showPassCheck" > Show Password</label>  
+                    <br><br>
+                    <div id  = "buttonWrapper">
+                        <button class= "submitBt"  >Sign Up</button> 
+                    </div> 
+                    <br>
+                    <a href = {{url_for('login')}} class  = "insteadText" >
+                    <div class  = "insteadText">
+                            Log In Instead
+                    </div>
+                    </a>
+                
+                </form> 
+                </div>
+            </div>
+        </div>
+
+        <script>
+            showPassCheck = document.getElementById("showPassCheck");
+            showPassCheck.onclick = function(){
+                if (showPassCheck.checked){
+                    document.getElementById("passEnter").type = "text"
+                    document.getElementById("confirmPassEnter").type = "text"
+                }
+                else{
+                    document.getElementById("passEnter").type = "password"
+                    document.getElementById("confirmPassEnter").type = "password"
+                }
+            }
+
+            {% with messages = get_flashed_messages() %}
+                {%if messages %}
+                    {%for msg in messages %}
+                        alert("{{msg}}")
+                    {%endfor%}
+                {%endif%}
+            {%endwith%}
+            
+        </script>
+    </body>
+
+
+</html>
+{%endblock%}

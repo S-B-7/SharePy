@@ -1,0 +1,90 @@
+#AddPostWrapper{
+    width : 98%;
+
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 100px;
+    background-color: #1C1C1C;
+    min-height : calc(100% - 100px);
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+  
+}
+
+.titleLb{
+
+color: gray;
+text-align: center;
+font-size: 50px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.enterLb{
+color: gray;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+margin-left: 1.5rem;
+margin-right: 1.5rem;
+width: auto;
+margin-bottom: 0.5rem;
+
+
+}
+
+.textEnter{
+
+background-color: rgb(44, 43, 43);
+text-indent: 1rem;
+color : white;
+
+width: clac(97%-3rem);
+outline: none;
+border : none;
+border-radius: 20px;
+height : 2.5rem;
+
+margin-bottom: 5px;
+margin-left: 1.5rem;
+margin-right: 1.5rem;
+font-size: 1.5rem;
+}
+
+.submitBt{
+background-color:  rgb(77, 14, 77);
+text-align: center;   
+border: none; 
+font-size: 20px;
+color: white;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 20px;
+margin-bottom: 10px;
+margin-left : 1.5rem;
+margin-right: 1.5rem;
+
+}
+
+#postContentBox{
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 10rem;
+    padding-right: 1rem;
+    text-indent: 0;
+    font-size: 1.5rem;
+}
+
+body{
+    background-color: black;
+    text-align : center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flexbox;
+    flex-direction: column;
+    overflow-anchor: none;
+    
+}

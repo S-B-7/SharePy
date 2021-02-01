@@ -1,0 +1,85 @@
+body{
+    background-color: black;
+    text-align : center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flexbox;
+    flex-direction: column;
+    overflow-anchor: none;
+
+}
+
+#meWrapper{
+   min-width : 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 100px;
+    background-color: #1C1C1C;
+    
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 30px;
+}
+
+#title{
+    margin-top: 1rem;
+    color :   rgb(77, 14, 77);
+    text-align: center;
+    font-size: 700%;
+    margin-bottom: 2rem;
+}
+
+.info-field{
+    font-size: 248%;
+    margin-left: 2rem;
+}
+
+.info-title{
+    color : rgba(177, 174, 174, 0.986)
+}
+
+.info-value{
+    color:white
+}
+
+
+#actionsWrapper{
+    width : 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 15px;
+    background-color: #1C1C1C;
+    
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 30px;
+}
+
+.action{
+    text-align: center;
+    color: white;
+    background-color:#2C2B2B;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    line-height: 4rem;
+    border-radius: 20px;
+    font-size: 30px;
+}
+
+.action:hover{
+    background-color : #353333;
+}
+
+@media screen and (max-width: 750px){
+    
+    .info-field{
+        font-size: 200%;
+       
+    }
+
+    
+}
