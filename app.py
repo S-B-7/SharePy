@@ -178,5 +178,5 @@ def userPage(username):
 
 
 if __name__ == "__main__":
-    app.run( host="192.168.0.5",threaded = True)
+    app.run( host="192.168.0.5",threaded = True,debug=True)
  
