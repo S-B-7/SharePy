@@ -1,4 +1,4 @@
-# server  server
+# server  server ovjs;ofj
 
 from flask import Flask, render_template, session, url_for, request,redirect, flash, jsonify
 from flask_socketio import SocketIO, emit
