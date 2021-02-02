@@ -1,6 +1,7 @@
 import pymongo as mongo
 from  pprint import pprint
 from datetime import datetime
+import os
 
 class DatabaseManager:
     ''' 
@@ -8,7 +9,7 @@ class DatabaseManager:
     '''
     def __init__(self, limit = 3):
         self.LIMIT = limit
-        self.client = mongo.MongoClient("mongodb+srv://SB7:s_7650_b@pyshare.gtcow.mongodb.net/SharePy?retryWrites=true&w=majority")
+        self.client = mongo.MongoClient(os.environ['SharePyMongoDb'])
         self.db= self.client['SharePy']
         self.users = self.db['Users']
         self.posts = self.db['Posts']
