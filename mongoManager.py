@@ -36,7 +36,9 @@ class DatabaseManager:
         user.pop('name')
         try : 
             self.users.insert(user)
-            return True
+            user['name'] = user['_id']
+            user.pop('_id')
+            return user
         except mongo.errors.DuplicateKeyError as e: 
             return False
     

@@ -62,7 +62,7 @@ a:hover{
     
 }
 
-#UsernameBox{
+#titleBox{
     font-size: 320%;
    
     color :  rgb(109, 37, 109);
@@ -117,6 +117,26 @@ a:hover{
         margin-right: 10%;
         margin-left: 10%;
     }
+
+    #commandTexts{
+        padding-right: 7%;
+
+    }
+
+    #titleBox{
+        padding-left: 7%;
+    }
+
+    .Navbar{
+        width : 99%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        margin-top: 0.5rem;
+    
+    }
+
+    
+
 }
 
 .userIcon{

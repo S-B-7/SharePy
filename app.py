@@ -82,7 +82,7 @@ def signup():
 
         if username and password and confirmPass and gender :
             if password.strip() == confirmPass.strip():
-                status = ( dbMngr.addUser(
+                user = ( dbMngr.addUser(
                     {
                         'name' : username.strip(), 
                         'password' : password.strip(),
@@ -91,8 +91,11 @@ def signup():
                     )
                     )
 
-                if not status:
+                if not user:
                     flash(f"User {username} already exits")
+                else:
+                    session['user'] = user
+                    return redirect(url_for('home'))
 
             else: 
                 flash("Confirmed password doesnt match password entered")
