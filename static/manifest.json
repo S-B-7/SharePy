@@ -1,6 +1,6 @@
 {
-    "name" : "PyShare", 
-    "short_name" : "PyShare" , 
+    "name" : "SharePy", 
+    "short_name" : "SharePy" , 
     "background_color" : "black",
     "start_url": "/",
     "display": "standalone",
