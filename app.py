@@ -74,7 +74,7 @@ def signup():
         return redirect(url_for("home"))
 
     if request.method == "POST":
-        username = request.form["username"].strip().upper()
+        username = request.form["username"].strip()
         password = request.form["password"].strip()
         confirmPass = request.form["confirmPass"].strip()
         gender  = request.form.get("gender", None).strip()
@@ -85,7 +85,7 @@ def signup():
                 status = ( dbMngr.addUser(
                     {
                         'name' : username.strip(), 
-                        'pass' : password.strip(),
+                        'password' : password.strip(),
                         "gender" : gender
                         }
                     )
