@@ -192,6 +192,18 @@ def userPage(username):
         flash(f"user {username} does not exist")
         return redirect(url_for("home"))
 
+@app.route('/unfollow/', methods = ['POST'])
+def handleUnfollow():
+    username = request.form['username']
+    dbMngr.unfollow(session['user']['name'] , username)
+    return jsonify("success")
+
+@app.route('/follow/', methods = ['POST'])
+def handleFollow():
+    username = request.form['username']
+    dbMngr.follow(session['user']['name'] , username)
+    return jsonify("success")
+
 
 if __name__ == "__main__":
     app.run( host="192.168.0.5",threaded = True,debug=True)

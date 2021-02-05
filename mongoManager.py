@@ -94,11 +94,25 @@ class DatabaseManager:
 
         return  [f['following'] for f in cur]
         
+    def follow(self, follower : str, following : str) : #makes a user follow another follow
+        self.following.insert(
+            {
+                'follower' : follower,
+                'following': following
+            }
+        )
 
+    def unfollow(self, follower : str , following : str ):
+        self.following.remove(
+            {
+                "follower" : follower,
+                "following": following,
+            }
+        )
 
 if __name__ == "__main__":
     db = DatabaseManager()
-    pprint(
-        db.getFollowing('S.B.7')
+    db.follow(
+        'S.B.7', 
+        'user2'
     )
-  

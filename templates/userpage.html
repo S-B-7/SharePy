@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User -{{userinfo.name}}</title>
         <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//userpage.css')}}">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -30,7 +30,7 @@
                 </span>
                
                 <span id = "followBt">
-                    Follow
+                    {{'Follow' if user.strip() not in followers else 'Unfollow'}}
                 </span>
 
             </span>
@@ -67,11 +67,42 @@
                 </span>
             </span>
 
-
-
-           
-
         </div>
+
+        <script>
+            $(document).ready(function(){
+                
+               $('#followBt').click(function(){
+                   if ($('#followBt').html().trim() == 'Unfollow' ){
+                       
+                        $.ajax({
+                            type: "POST",
+                            url: "/unfollow/",
+                            data: {
+                                'username' : $('#title').html().trim()
+                            },
+                            success: function (response) {
+                                window.location.reload();
+                            }
+                        });
+                   }
+
+                   else {
+                    $.ajax({
+                            type: "POST",
+                            url: "/follow/",
+                            data: {
+                                'username' : $('#title').html().trim()
+                            },
+                            success: function (response) {
+                                window.location.reload();
+                            }
+                        });
+                   } 
+               })
+            })
+
+        </script>
 
     </body>
 

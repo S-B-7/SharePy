@@ -68,7 +68,7 @@ body{
 }   
 
 .Joined-field{
-    width : 75%;
+    width : 72%;
     background-color: rgba(85, 81, 81, 0.2);
     border-radius: 20px;
     padding-top:1.5rem;
@@ -88,7 +88,7 @@ body{
 }
 
 #followBt{
-    width: 23%;
+    width: 26%;
     background-color: rgba(85, 81, 81, 0.2);
     border-radius: 20px;
     color :  rgba(177, 174, 174, 0.986);
