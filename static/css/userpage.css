@@ -100,6 +100,48 @@ body{
 
 }
 
+.followWrapper{
+    min-width : 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1rem;
+    background-color: #1C1C1C;
+    
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 30px;
+}
+
+.followTitle{
+    color : white;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.followUser{
+    color :  rgba(177, 174, 174, 0.986);
+    background-color: rgba(85, 81, 81, 0.2);
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: left;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+#followersWrapper{
+    display: none ;
+}
+
+#followingWrapper{
+    display: none;
+}
+
 @media screen and (max-width: 750px){
     .info-field{
         max-width: 7rem;

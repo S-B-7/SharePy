@@ -48,7 +48,7 @@
                 </span>
             
 
-                <span class = "info-field">
+                <span class = "info-field" id = "FollowersBt">
                     <span class = "info-title" >
                         Followers 
                     </span>
@@ -57,7 +57,7 @@
                     </span>
                 </span>
 
-                <span class = "info-field">
+                <span class = "info-field" id = "FollowingBt">
                     <span class = "info-title" >
                         Following 
                     </span>
@@ -67,7 +67,26 @@
                 </span>
             </span>
 
-        </div>
+            
+        </div></span>
+
+        <div id = "followersWrapper" class = "followWrapper">
+                <span class = "followTitle">Followers</span>
+
+                {% for user in followers : %}
+                    <a href =  {{url_for('userPage', username = user)}} class = "followUser">{{user}}</a>
+                {%endfor%}
+        </div> 
+
+        
+        <div id = "followingWrapper" class = "followWrapper">
+            <span class = "followTitle">Following</span>
+
+            {% for user in following : %}
+                <a href =  {{url_for('userPage', username = user)}} class = "followUser">{{user}}</a>
+            {%endfor%}
+    </div> 
+
 
         <script>
             $(document).ready(function(){
@@ -100,7 +119,23 @@
                         });
                    } 
                })
-            })
+                })
+
+                $('#FollowersBt').click(function(){
+                    if ($('#followersWrapper').css('display').trim() == 'none'){
+                        $("#followersWrapper").css('display','flex');
+                        $("#followingWrapper").css('display','none');}
+                    else
+                    $("#followersWrapper").css('display','none');
+                })
+
+                $('#FollowingBt').click(function(){
+                    if ($('#followingWrapper').css('display').trim() == 'none'){
+                        $("#followingWrapper").css('display','flex');
+                        $("#followersWrapper").css('display','none');}
+                    else
+                    $("#followingWrapper").css('display','none');
+                })
 
         </script>
 
