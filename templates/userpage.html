@@ -19,25 +19,57 @@
                 {{userinfo.name}}
             </span>
 
-            <span class = "info-field">
-                <span class = "info-title" >
-                    Gender :
+            <span class = "wrapper">
+                <span class = "Joined-field">
+                    <span class = "Joined-title">
+                        Joined On : 
+                    </span>
+                    <span class = "Joined-value">
+                        {{userinfo.dateJoined.strftime('%d %b %Y')}}
+                    </span>
+                </span>
+               
+                <span id = "followBt">
+                    Follow
                 </span>
 
-                <span class = "info-value">
-                    {{userinfo.gender}}
+            </span>
+           
+            <span class ="wrapper">
+               
+                <span class = "info-field">
+                    <span class = "info-title" >
+                        Gender 
+                    </span>
+
+                    <span class = "info-value">
+                        {{ 'Male' if userinfo.gender=="M" else "Female" }}
+                    </span>
                 </span>
-                
+            
+
+                <span class = "info-field">
+                    <span class = "info-title" >
+                        Followers 
+                    </span>
+                    <span class = "info-value">
+                        {{followerCount}}
+                    </span>
+                </span>
+
+                <span class = "info-field">
+                    <span class = "info-title" >
+                        Following 
+                    </span>
+                    <span class = "info-value">
+                        {{followingCount}}
+                    </span>
+                </span>
             </span>
 
-            <span class = "info-field">
-                <span class = "info-title">
-                    Date Joined : 
-                </span>
-                <span class = "info-value">
-                    {{userinfo.dateJoined}}
-                </span>
-            </span>
+
+
+           
 
         </div>
 

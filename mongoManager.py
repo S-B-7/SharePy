@@ -13,13 +13,12 @@ class DatabaseManager:
         self.db= self.client['SharePy']
         self.users = self.db['Users']
         self.posts = self.db['Posts']
+        self.following = self.db['Following']
 
     def getUser(self, username : str) -> dict : 
         user  = self.users.find_one({"_id" : username}, {"_id":0,"password": 0 })
         if user :
             user['name'] = username
-            user['pass'] = user['password']
-            user.pop('password')
         return user
     
     def getAuthorizedUser(self, username : str) -> dict : 
@@ -69,6 +68,37 @@ class DatabaseManager:
         except :
             return False
 
+    def getFollowers(self,username : str) -> list: #get list of followers of specific user
+        cur = self.following.find(
+            {
+                "following": username  
+            },
+            {
+                "_id" : 0,
+                "follower": 1,
+            }
+        )
+
+        return  [f['follower'] for f in cur]
+
+    def getFollowing(self, username : str) -> list : # get a list of the users a specific user is following
+        cur = self.following.find(
+            {
+                "follower": username  
+            },
+            {
+                "_id" : 0,
+                "following": 1,
+            }
+        )
+
+        return  [f['following'] for f in cur]
+        
+
+
 if __name__ == "__main__":
     db = DatabaseManager()
+    pprint(
+        db.getFollowing('S.B.7')
+    )
   

@@ -22,7 +22,11 @@ def befor_request(*_):
 def handleGetPosts():
     
     o = int(request.form['offset'])
-    posts =   [post for post in dbMngr.getPosts(o)]
+    posts = [] 
+    for post in  dbMngr.getPosts(o):
+        post['createdOn'] = post['createdOn'].strftime('%H:%M, %d %b %Y')
+        posts.append(post)
+    #posts =   [post for post in dbMngr.getPosts(o)]
     if posts: 
         return jsonify(posts)
     else :
@@ -174,7 +178,16 @@ def userPage(username):
         return redirect(url_for("mePage"))
     userInfo =  dbMngr.getUser(username)
     if userInfo:
-        return render_template("userpage.html", userinfo = userInfo, user = session['user']['name'])
+        followers = dbMngr.getFollowers(username)
+        following = dbMngr.getFollowing(username)
+        return render_template("userpage.html", 
+        userinfo = userInfo, 
+        user = session['user']['name'],
+        followers = followers,
+        followerCount = len(followers),
+        following= following,
+        followingCount = len(following)
+        )
     else : 
         flash(f"user {username} does not exist")
         return redirect(url_for("home"))
