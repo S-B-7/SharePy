@@ -164,7 +164,17 @@ def changePassword():
 def mePage():
     if not "user" in session:
         return redirect(url_for("login"))
-    return render_template('me.html', user = session['user']['name'])
+    username = session['user']['name']
+    followers = dbMngr.getFollowers(username)
+    following = dbMngr.getFollowing(username)
+    return render_template('me.html', 
+        userinfo = session['user'], 
+        user = session['user']['name'],
+        followers = followers,
+        followerCount = len(followers),
+        following= following,
+        followingCount = len(following)
+        )
 
 @app.route("/logout/")
 def logout():
