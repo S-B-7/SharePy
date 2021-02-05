@@ -1,47 +1,12 @@
-{% extends "navbar.html" %}
-{% block html %}
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//me.css')}}">
-       
-        <title>Me</title>
+
+{% extends "userpage.html" %}
 
         
-
-    </head>
-
-    <body>
-        
-        
-
-        <div id = "meWrapper">
-            <span id = "title"> 
-                {{user}}
-            </span>
-
-            <span class = "info-field">
-                <span class = "info-title" >
-                    Gender :
-                </span>
-
-                <span class = "info-value">
-                    {{session['user']['gender']}}
-                </span>
-                
-            </span>
-
-            <span class = "info-field">
-                <span class = "info-title">
-                    Date Joined : 
-                </span>
-                <span class = "info-value">
-                    {{session['user']['dateJoined']}}
-                </span>
-            </span>
-        </div>
-
+        {% block settings%}
+        <head>
+            <link rel ="stylesheet" type = "text/css" href= "{{url_for('static', filename = 'css//me.css')}}">
+            <title>ME</title>
+        </head>
         <div id = "actionsWrapper" >
             <a class = "action" href = {{url_for("logout")}}>
                 <div>
@@ -55,7 +20,4 @@
                 </span>
             </a>
         </div>
-
-    </body>
-</html>
-{%endblock%}
+        {% endblock %}

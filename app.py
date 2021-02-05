@@ -22,7 +22,11 @@ def befor_request(*_):
 def handleGetPosts():
     
     o = int(request.form['offset'])
-    posts =   [post for post in dbMngr.getPosts(o)]
+    posts = [] 
+    for post in  dbMngr.getPosts(o):
+        post['createdOn'] = post['createdOn'].strftime('%H:%M, %d %b %Y')
+        posts.append(post)
+    #posts =   [post for post in dbMngr.getPosts(o)]
     if posts: 
         return jsonify(posts)
     else :
@@ -160,7 +164,17 @@ def changePassword():
 def mePage():
     if not "user" in session:
         return redirect(url_for("login"))
-    return render_template('me.html', user = session['user']['name'])
+    username = session['user']['name']
+    followers = dbMngr.getFollowers(username)
+    following = dbMngr.getFollowing(username)
+    return render_template('me.html', 
+        userinfo = session['user'], 
+        user = session['user']['name'],
+        followers = followers,
+        followerCount = len(followers),
+        following= following,
+        followingCount = len(following)
+        )
 
 @app.route("/logout/")
 def logout():
@@ -174,10 +188,31 @@ def userPage(username):
         return redirect(url_for("mePage"))
     userInfo =  dbMngr.getUser(username)
     if userInfo:
-        return render_template("userpage.html", userinfo = userInfo, user = session['user']['name'])
+        followers = dbMngr.getFollowers(username)
+        following = dbMngr.getFollowing(username)
+        return render_template("userpage.html", 
+        userinfo = userInfo, 
+        user = session['user']['name'],
+        followers = followers,
+        followerCount = len(followers),
+        following= following,
+        followingCount = len(following)
+        )
     else : 
         flash(f"user {username} does not exist")
         return redirect(url_for("home"))
+
+@app.route('/unfollow/', methods = ['POST'])
+def handleUnfollow():
+    username = request.form['username']
+    dbMngr.unfollow(session['user']['name'] , username)
+    return jsonify("success")
+
+@app.route('/follow/', methods = ['POST'])
+def handleFollow():
+    username = request.form['username']
+    dbMngr.follow(session['user']['name'] , username)
+    return jsonify("success")
 
 
 if __name__ == "__main__":
