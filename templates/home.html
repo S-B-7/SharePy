@@ -37,15 +37,19 @@
                     <p class = "postTitle"> 
                         ${post['title']}
                         </p> 
-                    <p class = "postContent"> 
+                    <span class = "postedByText">
+                        Posted By <a  href = "/user/${post['poster']}" class = "PosterName"> ${post['poster']}</a>
+                    </span>
+                    
+                    <span class = "postContentBox"> 
                         ${post["content"]}
-                        </p > 
-                   <a href = "/user/${post['poster']}" >
-                        <p class = "postFooter"> 
-                        Posted By ${post['poster']} on ${post['createdOn']} 
-                        </p> 
-                    </a>
-                </div> `  )  ;
+                        </span > 
+                    <span class = "postDate"> 
+                        ${post['createdOn']} 
+                    </span> 
+                   
+                
+                    </div> `  )  ;
 
                
             }

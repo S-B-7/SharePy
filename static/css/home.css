@@ -5,7 +5,6 @@ body{
     display: flexbox;
     flex-direction: column;
     overflow-anchor: none;
-  
     
 }
 
@@ -31,22 +30,40 @@ body{
     padding-left: 5%;
     padding-right: 5%;
     margin-bottom: 1rem;;
+    display: flex;
+    flex-direction: column;
     
 }
 
 .postTitle{
     color : rgba(177, 174, 174, 0.877);
     font-size: 2rem;
+    margin-bottom: 0.6rem;
 }
 
-.postContent{
-    color : rgba(177, 174, 174, 0.623);
-    font-weight:normal;
+.postedByText{
+    margin-bottom: 1rem;
+    color:  rgba(255, 255, 255, 0.6)
 }
 
-.postFooter{
+
+.postContentBox{
+    color: #7A7A7A;
+    background-color : rgba(85, 81, 81, 0.2);
+    border-radius: 20px;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+.postDate{
+    margin-top: 0.6rem;
     text-align: right;
-    color: rgb(109, 37, 109);;
+    color : rgba(255, 255, 255, 0.6)
+}
+
+.PosterName{
+    color :rgb(109, 37, 109);
 }
 
 #loadMoreBt{
