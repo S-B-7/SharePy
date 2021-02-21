@@ -1,7 +1,5 @@
 # SharePy
-<img src = "https://img.shields.io/github/issues/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&logoColor=rgb%2844%2C%2043%2C%2043%29&style=flat-square">
-<img src = "https://img.shields.io/github/stars/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&style=flat-square" />
-<img src = "https://img.shields.io/github/forks/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&style=flat-square" />
+<img src = "https://img.shields.io/github/issues/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&logoColor=rgb%2844%2C%2043%2C%2043%29&style=flat-square">  <img src = "https://img.shields.io/github/stars/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&style=flat-square" />   <img src = "https://img.shields.io/github/forks/S-B-7/SharePy?color=rgb%2877%2C%2014%2C%2077%29&style=flat-square" />
 
 <br />
 <img src = "static/logo/logo.png" width = 100  height = 100/>
