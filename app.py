@@ -53,12 +53,13 @@ def login():
         return redirect(url_for("home"))
 
     if request.method == "POST":
+        print( type(request) , request.form)
         username = request.form["username"]
         password = request.form["password"]
         
         if username and password: 
             user = dbMngr.getAuthorizedUser(username.strip())
-            print (user)
+          
             if user:
                 if user['pass'].strip() == password.strip():
                     session['user'] = user
@@ -134,7 +135,7 @@ def addPost():
 
         
         
-        print(title, content)
+       
 
     return  render_template('addPost.html',user = session['user']['name'])
 
@@ -216,5 +217,5 @@ def handleFollow():
 
 
 if __name__ == "__main__":
-    app.run( host="192.168.0.5",threaded = True,debug=True)
+    app.run( threaded = True,debug=True)
  
