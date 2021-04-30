@@ -1,0 +1,25 @@
+.submit-button{
+    background-color:  var(--primary-color);
+    text-align: center;   
+    border: none; 
+    font-size: 1.7rem;
+    color: var(--text-enter-fg);
+    color:white;
+    border-radius: 20px;
+    width: calc(100% - 2rem);
+    margin : 1.1rem 1rem 0 ;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    transition: filter 100ms ease;
+
+    &:hover{
+        cursor:pointer;
+        filter : brightness(125%)
+    }
+
+    &:focus{
+        filter : brightness(125%);
+        outline: none;
+    }
+}
+

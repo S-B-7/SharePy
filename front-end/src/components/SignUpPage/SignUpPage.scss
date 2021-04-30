@@ -1,0 +1,54 @@
+.SignUpPage{
+    min-height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-box{
+    background: var(--div-bg);
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px grey;
+    border-radius: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    min-width: 15rem;
+    width: 22rem;
+    
+}
+
+.combo-wrapper{
+   display: flex;
+   color : var(--primary-fg);
+   font-size: 1.5rem;
+}
+
+.combo{
+    background-color: var(--text-enter-bg);
+    margin-left: 1rem;
+    border-radius: 20px;
+    border:  none;
+    color: var(--primary-color);
+    text-indent: 3px;
+    font-size: 1.3rem;
+    border :solid 1px;
+    width:7.5em;
+}
+
+.enterLb{
+    width: 100%;
+}
+
+.link{
+    margin: 0.5rem 0 0;
+    
+}
+.title{
+    margin-bottom: 0;
+}
+
+.showPass-wrapper{
+    margin: 0.5rem 0 0.1rem;
+}

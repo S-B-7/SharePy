@@ -1,0 +1,36 @@
+.user-list-box{
+    margin: 1rem;
+    width: calc(100% - 4rem );
+    background: var(--div-bg);
+    border: solid 1px gray ;
+    border-radius: 1rem;
+    padding: 0 1rem 1rem;
+
+    .title{
+        font-size: 3.5rem;
+        text-align: center;
+        margin: 1rem 0 1rem;
+        color : var(--primary-fg);
+    }
+
+
+    
+   
+    .user-box{
+        background: var(--text-enter-bg);
+        color : var(--primary-fg);
+        margin: 1rem 0 1rem;
+        border: solid 0.5px var(--post-border-color);
+        padding: 0.5rem 2rem 0.5rem;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+    
+        &:hover , &:focus{
+            border: solid 2px var(--primary-color);
+            filter: brightness(120%);
+        }
+
+    }
+
+
+}

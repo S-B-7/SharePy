@@ -1,0 +1,52 @@
+.LoginPage{
+   
+    min-height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.login-box{
+    background: var(--div-bg);
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px grey;
+    border-radius: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    min-width: 15rem;
+    width: 22rem;
+
+}
+#showPass-label{
+    color:var(--primary-fg);
+    margin-left: 0.5rem;
+}
+
+.showPass-wrapper{
+    margin: 0.9rem 0 0.5rem ;
+}
+
+.title{
+    margin-bottom: 3vh;
+    
+}
+
+.link{
+    color : var(--primary-fg);
+    margin:1.7rem 0 0;
+    text-align: right;
+}
+
+
+@media screen and (min-width: 750px) {
+    .title{
+        margin-bottom: 0;
+        margin-bottom: 2vh;
+       
+
+    }
+}
+

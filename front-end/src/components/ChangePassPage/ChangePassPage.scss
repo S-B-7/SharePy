@@ -1,0 +1,35 @@
+
+.ChangePassPage{
+    min-height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    .change-pass-Box{
+        background: var(--div-bg);
+        padding: 2rem 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        border: solid 1px grey;
+        border-radius: 2rem;
+        margin: 2rem;
+        min-width: 15rem;
+        width: 22rem;
+
+    }
+
+    .change-pass-btn{
+        margin : 1rem 1rem 1rem 
+    }
+
+    .title{
+        margin-bottom: 1.6rem;
+
+        &:hover{
+            filter: brightness(120%);
+        }
+
+    }
+
+}
+

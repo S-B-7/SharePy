@@ -1,0 +1,60 @@
+:root {
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #8b128b;
+}
+
+.light {
+  --bg: #EEEAEA;
+  --navbar-bg: #ACACAC;
+  --div-bg : #E3E3E3;
+  --div-bg: #e4e4e4;
+  --primary-fg: black;
+  --text-enter-bg: rgba(255, 255, 255, 0.35);;
+  --text-enter-fg: #838383;;
+  --shadow-color : gray;
+  --post-title-color : black;
+  --post-posted-by-color : rgb(61, 61, 61);
+  --post-content-color : black;
+  --post-border-color : gray;
+  --field-title-color : black;
+  --field-data-color : rgb(58, 58, 58);
+
+}
+
+.dark {
+  --bg: black;
+  --navbar-bg: #1C1C1C;
+  --div-bg: #141414;
+  --primary-fg: #b1aeae60;
+  --text-enter-bg: rgba(44, 43, 43, 0.63);;
+  --text-enter-fg: white;
+  --shadow-color : rgb(12, 11, 11);
+  --post-title-color : #b1aeae60;
+  --post-posted-by-color : rgb(187, 187, 187);
+  --post-content-color : #7A7A7A;
+  --post-border-color : rgba(44, 43, 43, 0.63);
+  --field-title-color : #6b6b6b;
+  --field-data-color : rgb(196, 196, 196);
+
+
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font);
+  background: var(--bg);
+  
+  
+
+}
+
+#root{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100vh;
+
+}

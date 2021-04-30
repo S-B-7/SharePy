@@ -1,0 +1,58 @@
+.AddPostPage{
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    width: calc( 100% - 4rem );
+    margin : 0 2rem 0 ;
+
+    h1{
+        color : var(--primary-fg);
+        text-align: center;
+        font-size: 3.5rem;
+        margin : 1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.add-page-wrapper{
+    margin-top: calc(7rem + 3vh );
+   
+    width: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    background:var(--div-bg);
+    border: solid 1px gray;
+    padding: 1rem 1rem 1rem ;
+    border-radius: 1rem;
+    height: max-content;
+    margin-bottom: 2rem;
+   
+   
+} 
+
+
+
+.add-post-content{
+    background: var(--text-enter-bg);
+    border: solid 1px var(--post-border-color);
+    height: 100%;
+    flex-grow: 1;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    color : var(--text-enter-fg);
+    max-height: 25vh;
+    min-height: 25vh;
+
+    &:focus{
+        border : solid 1.3px var(--primary-color);
+        outline: none;
+    }
+
+}
+
+.add-post-title{
+    margin:  0 1rem 0 ;
+}

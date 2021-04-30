@@ -1,0 +1,237 @@
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height : calc(4rem + 0.7rem + 1rem + 0.7rem);
+    background: var(--bg);
+}
+
+.Navbar{
+    width: calc(100% - 2% - 0.2rem);
+    height : 4rem;
+    border-radius: 2rem;
+    background: var(--div-bg);
+    display: flex;
+    align-items: center;    
+    margin : 0.7rem 1% 1rem;
+    padding: 0.5rem  0.1rem 0.5rem ;
+    border : solid 0.5px gray;
+
+
+}
+
+.logo{
+    transform: scale(0.75);
+    &:hover{
+        filter: brightness(130%);
+        cursor: pointer;
+    }
+}
+
+.commmand-link{
+    color:red;
+    background: blue;
+}
+
+.usernameTxt{
+    color: var(--primary-fg);
+    text-decoration: none;
+}
+
+.command-texts{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 2rem;
+    margin-left: auto;
+    gap:1.7rem;
+    button{
+        border:none;
+        outline: none;
+        background: transparent;
+    }
+}
+
+.command-texts > * {
+   &:hover{
+       cursor: pointer;
+       filter: brightness(200%);
+   }
+}
+
+
+.command-btns{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 2rem;
+    margin-left: auto;
+    transform: translateX(-2rem);
+    gap:1.7rem;
+    button{
+        border:none;
+        outline: none;
+        background: transparent;
+    }
+}
+
+.command-btns > * {
+    &:hover{
+        cursor: pointer;
+        filter: brightness(-50%);
+        color: grey;
+    }
+ }
+
+
+#userIcon{
+    width :2rem;
+    height: 3rem;
+    color : var(--primary-fg)
+}
+
+.userBtn{
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    &:focus{
+        color: var(--primary-fg);
+
+    }
+
+    &:focus-within{
+        color : var(--primary-fg)
+    }
+
+}
+
+.dropdown-menu{
+    background: var(--div-bg);
+    width: 18rem;
+    border : solid 1px gray ;
+    border-radius: 1rem;
+    padding: 0 0.5rem 1.5rem;
+    position : absolute;
+    top :6.5rem;
+    right: 5vw;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(-0.5rem 0.75rem 0.9rem var(--shadow-color))  ;  
+
+
+    .theme-div-activator-wrapper{
+        background-color:  var(--primary-color);
+        text-align: center;   
+        border: none; 
+        font-size: 1.7rem;
+        color: var(--text-enter-fg);
+        color:white;
+        border-radius: 20px;
+        margin : 1.1rem 1rem 0 ;
+        display: flex;
+        padding: 0 1rem 0 ;
+        justify-content: center;
+        align-items: center;
+        
+        span{
+            width: 100%;
+        }
+
+        &:hover{
+            cursor: pointer;
+            filter: brightness(125%);
+        }
+    }
+
+    .arrow-icon{
+        width: 1rem;
+        height: 1rem;
+        margin-left: auto;
+        
+        color: white;
+        fill: white;
+
+       
+    }
+  
+
+}
+
+.theme-div{
+    background: var(--text-enter-bg);
+    margin: 1rem;
+    border : solid 0.5px var(--post-border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 1rem;
+
+}
+
+.theme-btn{
+    background: transparent;
+    border : solid 0.2rem var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+   
+    &:hover{
+        cursor: pointer;
+        filter: brightness(140%);
+        
+    }
+    
+}
+
+.theme-btn-selected{
+    background: var(--primary-color);
+    color: white;
+}
+
+
+.logo-link{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 750px){
+    .command-texts{
+        display: none;
+    }
+
+    .command-btns{
+        display: flex ;
+    }
+}
+
+@media screen and (min-width: 750px){
+    .command-texts{
+        display: flex;
+    }
+
+    .command-btns{
+        display: none ;
+    }
+
+    .command-texts{
+        margin-right: 10%;
+    }
+
+    .logo{
+        margin-left: 10%;
+    }
+
+    .dropdown-menu{
+        position: absolute;
+        right: 11vw;
+    }
+
+    
+}
+
+

@@ -45,8 +45,10 @@ class DatabaseManager:
         result  =  self.posts.findOne({"_id": id})
         result['_id'] = str (result['_id']) 
     
-    def getPosts(self, offset: int = 0 ) -> dict: #gets posts for homepage using a offset which defaults to 0v
-        iterator = self.posts.find().sort("createdOn",-1).limit(self.LIMIT).skip(offset)
+    def getPosts(self, offset: int = 0 , limit : int = None ) -> dict: #gets posts for homepage using a offset which defaults to 0v
+        if not limit:
+            limit = self.LIMIT
+        iterator = self.posts.find().sort("createdOn",-1).limit(limit).skip(offset)
         for post in iterator:
             post['_id'] = str(post['_id']) 
             yield post
