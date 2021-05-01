@@ -33,8 +33,8 @@ These are the features I have been trying to (or planning to ) add in the future
 
 - `Flask` with `Python` for the back-end server
 - `MongoDb` as the Databse 
-- Plain `html`/`css`/`javascript` for the front end
-- `Ajax` for communicating with the sever
+- `React` for the front end
+- `fecth` for communicating with the sever
 
 
 

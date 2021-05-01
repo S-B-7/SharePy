@@ -1,8 +1,10 @@
 from flask import Flask,  session, url_for, request,redirect, jsonify, abort
+from flask_cors  import cross_origin, CORS
 from mongoManager import DatabaseManager
 from datetime import timedelta
 
 app = Flask(__name__,  static_folder='./front-end/build/', static_url_path='/')
+CORS(app)
 app.secret_key = "%#$@20)*_#@&$1907^&*"
 app.permanent_session_lifetime = timedelta(weeks = (10 * 52))
 dbMngr = DatabaseManager() 
@@ -32,6 +34,7 @@ def home():
     return redirect(url_for("root"))
 
 @app.route("/login/", methods = ["GET", "POST"])  # login api for react 
+@cross_origin()
 def login(): 
 
     if "user" in session:
@@ -67,6 +70,7 @@ def login():
     return app.send_static_file('index.html')
 
 @app.route("/signup/", methods = ["GET", "POST"]) #signup api for react
+@cross_origin()
 def signUp():
     if "user" in session:
         return redirect(url_for("home"))
@@ -284,4 +288,4 @@ def getUserName():
 
 
 if __name__ == "__main__":
-    app.run(port = 4001)
+    app.run(port = 4001 , debug=True)

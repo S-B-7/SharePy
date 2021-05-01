@@ -18,6 +18,7 @@ function ChangePassPage() {
     const [passInputType, setPassInputType] = useState("password");
     const [msg, setMsg] = useState("");
     const [msgColor, setMsgColor] = useState("");
+    document.title = "SharePy - Change Password"
 
     const changePass = () =>{
         

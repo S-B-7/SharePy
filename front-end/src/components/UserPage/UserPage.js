@@ -10,6 +10,7 @@ function UserPage() {
     const [currentUser, setCurrentUser] = useState(username)
     const [userData, setUserData] = useState({followers : [], followers : [] , });
     const [showList, setShowList] = useState (null);
+    document.title = `SharePy - ${username}`
 
     useEffect(
         ()=>{
